@@ -31,5 +31,8 @@ binance_credentials(key, secret)
 Send an order to Binance.US:
 
 ```r
+lastTicker <- binance_ticker_price(symbol)
+lastPrice <- lastTicker$price
+
 binance_new_order(symbol, side = side, type = 'LIMIT', price = lastPrice, quantity = quantity, time_in_force = 'GTC', test = T)
 ```
